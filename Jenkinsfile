@@ -1,10 +1,9 @@
 pipeline{
     agent any
     stages{
-        stage('Run on agent'){
-            agent any
+        stage('Build Info'){
             steps{
-                bat 'echo Running on agent'
+                bat 'echo Build Number : %BUILD_NUMBER%'
             }
         }
         stage('Build'){
