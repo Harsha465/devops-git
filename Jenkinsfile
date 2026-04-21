@@ -16,15 +16,24 @@ pipeline{
                 git 'https://github.com/Harsha465/devops-git.git'
             }
         }
-        stage('Check Files'){
+        stage('Install Dependencies'){
             steps{
-                bat 'echo Listing Files'
-                bat 'dir'
+                bat 'pip install -r requirements.txt'
             }
         }
-        stage('Read Login File'){
+        stage('Run Tests'){
             steps{
-                bat 'type login.py'
+                bat 'python -m pytest test_app.py'
+            }
+        }
+        stage('Build Docker Image'){
+            steps{
+                bat 'docker build -t devops-app .'
+            }
+        }
+        stage('Run Docker Container'){
+            steps{
+                bat 'docker run devops-app'
             }
         }
     }
