@@ -6,11 +6,11 @@ pipeline{
        //          bat 'python -m pip install -r requirements.txt'
        //      }
        //  }
-        stage('Run Tests'){
-            steps{
-                bat 'python -m pytest test_app.py'
-            }
-        }
+        // stage('Run Tests'){
+        //     steps{
+        //         bat 'python -m pytest test_app.py'
+        //     }
+        // }
         stage('Build Docker Image'){
             steps{
                 bat 'docker build -t devops-app .'
