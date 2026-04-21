@@ -18,12 +18,12 @@ pipeline{
         }
         stage('Install Dependencies'){
             steps{
-                bat 'python -m pip install -r requirements.txt'
+                bat '"C:\Users\LENOVO\AppData\Local\Programs\Python\Python310\python.exe" -m pip install -r requirements.txt'
             }
         }
         stage('Run Tests'){
             steps{
-                bat 'python -m pytest test_app.py'
+                bat '"C:\Users\LENOVO\AppData\Local\Programs\Python\Python310\python.exe" -m pytest test_app.py'
             }
         }
         stage('Build Docker Image'){
