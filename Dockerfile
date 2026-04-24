@@ -5,6 +5,6 @@ WORKDIR /app
 COPY . .
 
 RUN pip install -r requirements.txt
-RUN pytest test_app.py
+RUN pytest test_app.py || exit 1
 
 CMD ["python3", "app.py"]
