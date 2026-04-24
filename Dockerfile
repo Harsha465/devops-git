@@ -6,6 +6,6 @@ COPY requirements.txt .
 RUN pip install -r requirements.txt
 COPY . .
 
-RUN pytest tests/test_app.py
+RUN pytest tests/test-app.py
 
 CMD ["python3", "app.py"]
